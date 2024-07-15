@@ -1,6 +1,5 @@
 package itau_demo.itau.boundaries
 
-import io.mockk.InternalPlatformDsl.toStr
 import itau_demo.itau.domain.Car
 import itau_demo.itau.infrastructure.CarRepository
 import org.hamcrest.CoreMatchers.`is`
@@ -64,7 +63,7 @@ class CarControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk)
             .andExpect(jsonPath("$[0].id", `is`(car1.id.toString())))
-            .andExpect(jsonPath("$[1].id", `is`(car2.id.toStr())))
+            .andExpect(jsonPath("$[1].id", `is`(car2.id.toString())))
     }
 
     @Test
